@@ -111,7 +111,6 @@
             background-color: #cbcbcb;
         }
 
-        /* Responsif untuk perangkat lebih kecil */
         @media (max-width: 768px) {
             input[type="text"], input[type="number"], button {
                 width: 100%;
@@ -199,45 +198,7 @@
 
 </div>
 
-<script>
-    function calculateGradeAndStatus(finalScore) {
-        if (finalScore >= 0 && finalScore <= 20) {
-            return { grade: 'E', status: 'Gagal' };
-        } else if (finalScore >= 21 && finalScore <= 40) {
-            return { grade: 'D', status: 'Gagal' };
-        } else if (finalScore >= 41 && finalScore <= 60) {
-            return { grade: 'C', status: 'Gagal' };
-        } else if (finalScore >= 61 && finalScore <= 80) {
-            return { grade: 'B', status: 'Lulus' };
-        } else if (finalScore >= 81 && finalScore <= 100) {
-            return { grade: 'A', status: 'Lulus' };
-        } else {
-            return { grade: 'Invalid', status: 'Invalid' };
-        }
-    }
-
-    function calculateGrades() {
-        for (let i = 1; i <= 5; i++) {
-            let uts = parseFloat(document.getElementById(`uts${i}`).value);
-            let uas = parseFloat(document.getElementById(`uas${i}`).value);
-
-            if (!isNaN(uts) && !isNaN(uas)) {
-                let finalScore = (uts + uas) / 2;
-                let result = calculateGradeAndStatus(finalScore);
-
-                document.getElementById(`final${i}`).innerText = finalScore.toFixed(2);
-                document.getElementById(`grade${i}`).innerText = result.grade;
-                document.getElementById(`status${i}`).innerText = result.status;
-            } else {
-                alert('Masukkan nilai UTS dan UAS yang valid untuk semua mahasiswa.');
-            }
-        }
-    }
-
-    function goBack() {
-        window.location.href = 'index.html'; // Mengarahkan pengguna kembali ke index.html
-    }
-</script>
+<script src="index.js"></script>
 
 </body>
 </html>
